@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a2e1a" />
+  <title>Dashboard | Premium Tax Ramadan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body class="dashboard-page">
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+    <span class="theme-icon theme-icon-dark" aria-hidden="true">☀️</span>
+    <span class="theme-icon theme-icon-light" aria-hidden="true">🌙</span>
+  </button>
+  <div id="authScreen" class="dash-container auth-screen-wrap">
+    <div class="dash-card auth-card">
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-auth-tab="signin" id="authTabSignIn">Sign in</button>
+        <button type="button" class="auth-tab" data-auth-tab="signup" id="authTabSignUp">Create account</button>
+      </div>
+      <h2 class="auth-heading" id="authTitle">Sign in</h2>
+      <form class="auth-form" id="authForm">
+        <div class="form-group" id="nameGroup" style="display: none;">
+          <label for="adminName">Full name</label>
+          <input type="text" id="adminName" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="adminEmail">Email</label>
+          <input type="email" id="adminEmail" required placeholder="admin@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="adminPassword">Password</label>
+          <input type="password" id="adminPassword" required placeholder="••••••••" />
+        </div>
+        <button type="submit" class="btn-auth" id="authSubmit">Sign in</button>
+        <p class="auth-switch" id="authToggle">
+          Don't have an account? <a href="#" class="auth-toggle-link" id="authToggleLink">Create account</a>
+        </p>
+        <p class="auth-switch auth-switch-alt" id="authToggleAlt" style="display: none;">
+          Already have an account? <a href="#" class="auth-toggle-link" id="authToggleLinkAlt">Sign in</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div id="dashScreen" style="display: none;">
+    <header class="dash-header">
+      <h1>Ramadan – Submissions</h1>
+      <div class="dash-header-actions">
+        <button type="button" class="btn-refresh" id="btnRefresh" title="Sync latest submissions from website">Refresh</button>
+        <button type="button" class="btn-download-pdf" id="btnDownloadPdf">Download PDF</button>
+        <button type="button" class="btn-logout" id="btnLogout">Logout</button>
+      </div>
+    </header>
+    <div class="dash-container">
+      <p class="dash-sync-hint" id="dashSyncHint" style="display: none; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-muted, #666);"></p>
+      <div class="dash-card">
+        <h2>All entries</h2>
+        <div class="submissions-table-wrap" id="tableWrap">
+          <table class="submissions-table" id="submissionsTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Business owner</th>
+                <th>Business type</th>
+                <th>W2 $750k+</th>
+                <th>Submitted</th>
+              </tr>
+            </thead>
+            <tbody id="submissionsBody"></tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="emptyState" style="display: none;">
+          No submissions yet.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.31/dist/jspdf.plugin.autotable.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
