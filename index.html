@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1e3a5f" />
+  <title>Premium Tax Accounting | Ramadan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="welcome-body">
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+    <span class="theme-icon theme-icon-dark" aria-hidden="true">☀️</span>
+    <span class="theme-icon theme-icon-light" aria-hidden="true">🌙</span>
+  </button>
+  <div class="welcome-page" id="welcomePage">
+    <div class="welcome-bg"></div>
+    <div class="welcome-content">
+      <div class="welcome-logo-wrap" data-anim>
+        <img src="assets/img/pta-logo.png" alt="" class="welcome-logo" id="welcomeLogo" />
+        <div class="welcome-logo-fallback" id="welcomeLogoFallback" hidden aria-hidden="true">Premium Tax Accounting</div>
+      </div>
+      <h1 class="welcome-title">
+        <span class="line" data-anim>Welcome to</span>
+        <span class="line accent" data-anim>Premium Tax Accounting</span>
+      </h1>
+      <p class="welcome-eid" data-anim>
+        Celebrate Ramadan 2026 and enter for a chance to win exciting prizes this Eid.
+      </p>
+      <p class="welcome-sub" data-anim>
+        To participate in the prize pool please signup now and get a chance to win exciting prizes.
+      </p>
+      <p class="welcome-sub welcome-prizes" data-anim>
+        Prizes: iPhone 17, PS5, Gift card from Restaurants.
+      </p>
+      <button type="button" class="btn-signup" id="btnSignup" data-anim>
+        Sign Up Now
+      </button>
+    </div>
+    <div class="floating-shapes" aria-hidden="true">
+      <span class="shape shape-1"></span>
+      <span class="shape shape-2"></span>
+      <span class="shape shape-3"></span>
+      <span class="shape shape-4"></span>
+      <span class="shape shape-5"></span>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copyright">© <span id="footerYear"></span> Premium Tax Accounting. All rights reserved.</p>
+      <p class="footer-credit">Developed by Xevibox Team</p>
+    </div>
+  </footer>
+
+  <!-- Signup form overlay -->
+  <div class="form-overlay" id="formOverlay" aria-hidden="true">
+    <div class="form-backdrop" id="formBackdrop"></div>
+    <div class="form-modal" id="formModal">
+      <button type="button" class="form-close" id="formClose" aria-label="Close form">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="form-modal-side">
+        <div class="form-side-logo">
+          <img src="assets/img/pta-logo.png" alt="" id="formModalLogo" />
+          <span class="form-modal-logo-fallback" id="formModalLogoFallback" hidden>Premium Tax Accounting</span>
+        </div>
+        <p class="form-side-tagline">Ramadan 2026</p>
+        <p class="form-side-desc">Register now and get a chance to win iPhone 17, PS5 and gift cards from restaurants.</p>
+      </div>
+
+      <div class="form-modal-body">
+        <h2 class="form-title">Register now</h2>
+        <form class="tax-form" id="signupForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="firstName" required placeholder="e.g. John" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name <span class="req">*</span></label>
+              <input type="text" id="lastName" name="lastName" required placeholder="e.g. Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 8900" />
+          </div>
+
+          <div class="form-divider"></div>
+
+          <div class="form-group">
+            <label>Are you a business owner? <span class="req">*</span></label>
+            <div class="form-options">
+              <label class="form-option">
+                <input type="radio" name="businessOwner" value="yes" required />
+                <span class="form-option-box" aria-hidden="true"></span>
+                <span>Yes</span>
+              </label>
+              <label class="form-option">
+                <input type="radio" name="businessOwner" value="no" />
+                <span class="form-option-box" aria-hidden="true"></span>
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group conditional" id="businessTypeWrap" hidden>
+            <label for="businessType">Business type <span class="req">*</span></label>
+            <select id="businessType" name="businessType">
+              <option value="">Choose one</option>
+              <option value="retail">Retail</option>
+              <option value="service">Service</option>
+              <option value="online">Online</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div class="form-group conditional" id="w2Wrap" hidden>
+            <label>Do you make $750k+ yearly in W2? <span class="req">*</span></label>
+            <div class="form-options">
+              <label class="form-option">
+                <input type="radio" name="w2Income" value="yes" />
+                <span class="form-option-box" aria-hidden="true"></span>
+                <span>Yes</span>
+              </label>
+              <label class="form-option">
+                <input type="radio" name="w2Income" value="no" />
+                <span class="form-option-box" aria-hidden="true"></span>
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btnSubmit">Submit</button>
+          <p class="form-confidentiality">Your data will be confidential and will not be shared with anyone.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>document.getElementById('footerYear') && (document.getElementById('footerYear').textContent = new Date().getFullYear());</script>
+</body>
+</html>

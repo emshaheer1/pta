@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1e3a5f" />
+  <title>Thank You | Premium Tax Accounting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="thank-you-page thank-you-body">
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+    <span class="theme-icon theme-icon-dark" aria-hidden="true">☀️</span>
+    <span class="theme-icon theme-icon-light" aria-hidden="true">🌙</span>
+  </button>
+  <div class="ty-bg"></div>
+  <div class="ty-content">
+    <div class="ty-logo-wrap" data-ty-anim>
+      <img src="assets/img/pta-logo.png" alt="" class="ty-logo" id="tyLogo" />
+      <div class="ty-logo-fallback" id="tyLogoFallback" hidden>Premium Tax Accounting</div>
+    </div>
+    <div class="ty-icon-wrap" data-ty-anim>
+      <div class="ty-check">
+        <svg viewBox="0 0 52 52" aria-hidden="true">
+          <circle class="ty-check-circle" cx="26" cy="26" r="25" fill="none" stroke-width="2"/>
+          <path class="ty-check-path" fill="none" stroke-width="2" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+    </div>
+    <h1 class="ty-title" data-ty-anim>Thank You!</h1>
+    <p class="ty-message" data-ty-anim>
+      Thank You for Registering! Your form has been successfully submitted for the Premium Tax Accounting Prize Draw.
+    </p>
+    <p class="ty-sub" data-ty-anim>
+      The winner will be selected through a random lucky draw and contacted via phone or email. Best of luck!
+    </p>
+    <a href="index.html" class="btn-ty-back" data-ty-anim>Back to Welcome</a>
+  </div>
+  <div class="ty-confetti" aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copyright">© <span id="footerYear"></span> Premium Tax Accounting. All rights reserved.</p>
+      <p class="footer-credit">Developed by Xevibox Team</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/thank-you.js"></script>
+  <script>document.getElementById('footerYear') && (document.getElementById('footerYear').textContent = new Date().getFullYear());</script>
+</body>
+</html>
